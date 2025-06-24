@@ -1,0 +1,120 @@
+@use '../abstracts/variables' as *;
+
+.winners-list {
+  width: 100%;
+  max-width: 1280px;
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__empty {
+    padding: 2rem;
+    font-size: $font-size-xl;
+    color: $color-text-light;
+    text-align: center;
+  }
+}
+
+.winners-grid {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  border: 1px solid $input-border;
+  border-radius: 1rem;
+
+  background-color: $input-background;
+
+  &__cell {
+    padding: 1rem;
+    border-bottom: 1px solid $input-border;
+
+    font-size: $font-size-base;
+    color: $color-text;
+    text-align: left;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 2fr 1fr 1.2fr;
+    width: 100%;
+
+    .winners-grid__cell {
+      font-weight: 700;
+      color: $color-text;
+      text-align: left;
+      background-color: $color-night;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 2fr 1fr 1.2fr;
+    width: 100%;
+    text-align: left;
+
+    .winners-grid__cell--name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      border-color: $color-primary;
+      background-color: $color-bright;
+    }
+  }
+
+  &__car-icon {
+    display: block;
+
+    width: 50px;
+    height: 25px;
+
+    background-color: $color-night;
+
+    mask-image: url('./../assets/svg/car.svg');
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+  }
+
+  &__cell--sort {
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $color-attention;
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .winners-grid {
+    &__cell {
+      font-size: $font-size-xs;
+    }
+
+    &__car-icon {
+      height: 20px;
+    }
+  }
+}

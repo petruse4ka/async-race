@@ -1,0 +1,124 @@
+@use '../abstracts/variables' as *;
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  cursor: pointer;
+
+  padding: 0.75rem 1.5rem;
+  border: 1px solid $color-primary;
+  border-radius: 0.5rem;
+
+  font-size: $font-size-base;
+  color: $color-text;
+
+  background-color: transparent;
+
+  transition: all 0.3s ease-in-out;
+
+  &--homepage {
+    border-color: $color-error;
+
+    &:hover {
+      color: $color-error;
+    }
+  }
+
+  &--create-car {
+    border-color: $color-success;
+
+    &:hover {
+      color: $color-success;
+    }
+  }
+
+  &--edit-car,
+  &--delete-car {
+    padding: 0 0.2rem;
+    border: none;
+    color: $color-primary;
+  }
+
+  &--edit-car {
+    &:hover {
+      color: $color-attention;
+    }
+  }
+
+  &--delete-car {
+    &:hover {
+      color: $color-error;
+    }
+  }
+
+  &--start-car,
+  &--start-race {
+    border-color: $color-success;
+
+    &:hover {
+      color: $color-success;
+    }
+  }
+
+  &--stop-car,
+  &--reset-race {
+    border-color: $color-error;
+
+    &:hover {
+      color: $color-error;
+    }
+  }
+
+  &--update-car {
+    padding: 0.69rem 1.5rem;
+
+    &:hover {
+      border-color: $color-success;
+      color: $color-success;
+    }
+  }
+
+  &--cancel {
+    padding: 0.69rem 1.5rem;
+
+    &:hover {
+      border-color: $color-error;
+      color: $color-error;
+    }
+  }
+
+  &--generate-cars {
+    border-color: $color-attention;
+
+    &:hover {
+      color: $color-attention;
+    }
+  }
+
+  &--prev,
+  &--next {
+    padding: 0 0.2rem;
+    border: none;
+    font-size: $font-size-large;
+
+    &:hover {
+      color: $color-attention;
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+}
+
+@media (width < 500px) {
+  .button {
+    padding: 0.75rem 0.5rem;
+  }
+}

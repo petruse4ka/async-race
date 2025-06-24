@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as *;
+
+.error {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background-color: $color-background;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+    font-size: $font-size-3xl;
+    color: $color-error;
+    text-align: center;
+  }
+
+  &__message {
+    margin-bottom: 2rem;
+    font-size: $font-size-large;
+    color: $color-text;
+    text-align: center;
+  }
+}

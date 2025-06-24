@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+
+.footer {
+  padding: 1rem 2rem;
+  color: $color-text-highlight;
+  background-color: $color-primary;
+
+  &__copyright {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    font-size: $font-size-small;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    color: $color-text-highlight;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}

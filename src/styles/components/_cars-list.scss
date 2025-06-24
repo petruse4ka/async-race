@@ -1,0 +1,129 @@
+@use '../abstracts/variables' as *;
+
+.cars-list {
+  width: 100%;
+  max-width: 1280px;
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+
+    padding: 1rem;
+    border: 1px solid $input-border;
+    border-radius: 1rem;
+
+    background-color: $input-background;
+  }
+
+  &__car {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__car-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    .update-car {
+      display: flex;
+      flex: 1;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+
+  &__car-name {
+    overflow: hidden;
+    display: block;
+
+    max-width: 450px;
+    height: 2.81rem;
+
+    font-size: $font-size-base;
+    color: $color-smooth;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__car-icon {
+    width: 100px;
+    padding-top: 2rem;
+
+    background-color: $color-night;
+
+    mask-image: url('./../assets/svg/car.svg');
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+  }
+
+  &__road {
+    position: relative;
+
+    width: 98%;
+    height: 2px;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+
+    background: repeating-linear-gradient(
+      to right,
+      $color-text-light 1px,
+      $color-text-light 7px,
+      transparent 2px,
+      transparent 10px
+    );
+  }
+
+  &__finish-flag {
+    position: absolute;
+    top: -43px;
+    right: 0;
+
+    width: 40px;
+
+    object-fit: contain;
+  }
+
+  &__empty {
+    padding: 2rem;
+    font-size: $font-size-xl;
+    color: $color-text-light;
+    text-align: center;
+  }
+}
+
+@media (width <= 768px) {
+  .cars-list {
+    &__car-name {
+      max-width: 250px;
+    }
+  }
+}

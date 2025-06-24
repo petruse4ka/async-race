@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as *;
+
+.header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 1rem 2rem;
+
+  color: $color-text-highlight;
+
+  background-color: $color-primary;
+
+  &__container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1280px;
+    padding: 1rem;
+  }
+
+  &__logo {
+    cursor: default;
+    margin: 0;
+    font-size: $font-size-2xl;
+    font-weight: 700;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 1rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .menu {
+    &__item {
+      cursor: pointer;
+
+      padding: 0.75rem 1.5rem;
+      border: 1px solid $color-border;
+      border-radius: 0.5rem;
+
+      font-size: $font-size-base;
+      color: $color-text;
+
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $color-smooth;
+        color: $color-smooth;
+      }
+
+      &--disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+@media (width < 500px) {
+  .header {
+    &__container {
+      flex-direction: column;
+    }
+  }
+}

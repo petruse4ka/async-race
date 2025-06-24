@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as *;
+
+.input {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  &__field {
+    height: 45px;
+    padding: 0.5rem;
+    border: 1px solid $color-primary;
+    border-radius: 0.5rem;
+
+    font-size: $font-size-base;
+    color: $color-smooth;
+
+    background-color: $input-background;
+
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: $color-text-light;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-success;
+      outline: none;
+    }
+  }
+
+  &--add-new,
+  &--update-name {
+    flex: 1;
+    width: 100%;
+    min-width: 85px;
+  }
+
+  &--color,
+  &--update-color {
+    cursor: pointer;
+
+    width: 10%;
+    min-width: 40px;
+    max-width: 50px;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+      border: 1px solid $color-primary;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        border-color: $color-success;
+        outline: none;
+      }
+    }
+  }
+
+  &--error {
+    border-color: $color-error;
+
+    &:hover {
+      border-color: $color-error;
+    }
+  }
+}
