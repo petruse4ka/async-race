@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as *;
+
+.paginator {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1rem;
+
+  &__page {
+    font-size: $font-size-large;
+    color: $color-text-light;
+  }
+}
