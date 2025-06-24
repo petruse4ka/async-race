@@ -17,6 +17,7 @@ export abstract class Modal extends Component {
     }).getElement();
 
     this.closeButton = new ButtonBuilder({
+      type: 'button',
       tag: 'button',
       className: 'modal__close-button',
       textContent: '×',
